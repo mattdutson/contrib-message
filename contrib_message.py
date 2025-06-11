@@ -2,6 +2,7 @@
 
 import argparse
 import datetime
+import pathlib
 import subprocess
 
 import numpy as np
@@ -68,10 +69,11 @@ def main():
         image = Image.new("RGB", (weeks, 7))
         draw = ImageDraw.Draw(image)
         draw.fontmode = "1"  # Disable antialiasing.
+        font_path = pathlib.Path(__file__).parent / "bpdots_unicase_square_bold.otf"
         draw.text(
             (args.offset, -4),  # -4 gives vertical centering.
             segment.upper(),
-            font=ImageFont.truetype("bpdots_unicase_square_bold.otf"),
+            font=ImageFont.truetype(font_path),
         )
         pixels = np.array(image)[..., 0].astype(np.bool)
 
