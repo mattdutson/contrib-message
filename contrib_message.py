@@ -19,7 +19,7 @@ def main():
     parser.add_argument(
         "-b",
         "--background-level",
-        default=0,
+        default=10,
         type=int,
         help="the number of commits per day to use for background",
     )
