@@ -32,14 +32,14 @@ def main():
     parser.add_argument(
         "-f",
         "--foreground-level",
-        default=50,
+        default=100,
         type=int,
         help="the number of commits per day to use for foreground text",
     )
     parser.add_argument(
         "-o",
         "--offset",
-        default=0,
+        default=2,
         type=int,
         help="horizontal to use when rendering text",
     )
